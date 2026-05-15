@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy · EL-EMAM · Germanist</title>
+  <meta name="description" content="How data submitted through elemamgermanist.com is handled.">
+  <meta name="theme-color" content="#F6E9C9">
+  <meta name="color-scheme" content="light">
+  <meta name="author" content="Ahmed El-Emam">
+  <link rel="canonical" href="https://elemamgermanist.com/privacy.html">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap">
+
+  <style>
+    :root {
+      /* Paper world */
+      --page-bg:       #F6E9C9;
+      --paper-warm:    #FBF2DD;
+      --paper:         #F6E9C9;
+      --paper-soft:    #DDCBA6;
+      --paper-mute:    #A89878;
+      --paper-edge:    rgba(31, 22, 14, 0.10);
+
+      /* Ink + dark moments */
+      --ink:           #1F160E;
+      --ink-soft:      #3B2A1C;
+      --ink-mute:      rgba(31, 22, 14, 0.62);
+      --dark-section:  #1F160E;
+
+      /* Legacy aliases for any remaining dark-context use */
+      --ground:        #1F160E;
+      --ground-soft:   #261C14;
+
+      /* Accents */
+      --gold:          #7A5C0A;
+      --gold-soft:     #5E460A;
+      --gold-on-dark:  #DDB35A;
+      --gold-edge:     rgba(122, 92, 10, 0.32);
+      --burgundy:      #8B4233;
+
+      --display: 'Playfair Display', 'Times New Roman', serif;
+      --serif:   'IBM Plex Serif', Georgia, serif;
+      --mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+      --container: 680px;
+      --gutter: 1.25rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      background: var(--page-bg);
+      color: var(--ink-soft);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.035;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.14 0 0 0 0 0.08 0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+
+    main, header, footer { position: relative; z-index: 2; }
+
+    .topbar {
+      padding: 1.25rem var(--gutter) 0.4rem;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .wordmark {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .wordmark a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--gold-edge);
+      padding-bottom: 1px;
+    }
+
+    .wordmark a:hover { color: var(--gold); }
+
+    main.privacy {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0.6rem var(--gutter) 4rem;
+    }
+
+    .priv-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: clamp(1.9rem, 5vw, 2.4rem);
+      letter-spacing: -0.005em;
+      margin-top: 0.6rem;
+      color: var(--ink);
+    }
+
+    .updated {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-mute);
+      margin-top: 0.8rem;
+    }
+
+    .intro {
+      margin-top: 2rem;
+      max-width: 56ch;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    section.block {
+      margin-top: 2.5rem;
+      max-width: 60ch;
+    }
+
+    section.block h2 {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--gold-edge);
+    }
+
+    section.block p {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    section.block p + p {
+      margin-top: 0.8rem;
+    }
+
+    section.block a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--gold-edge);
+      padding-bottom: 1px;
+      transition: color 0.2s ease;
+    }
+
+    section.block a:hover { color: var(--gold-soft); }
+
+    .signoff {
+      margin-top: 3.5rem;
+      font-family: var(--display);
+      font-style: italic;
+      color: var(--ink-mute);
+      font-size: 1.05rem;
+    }
+
+    footer {
+      background: var(--dark-section);
+      max-width: 100%;
+      margin: 0;
+      padding: 3rem var(--gutter) 3rem;
+      border-top: none;
+    }
+
+    .footer-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .foot-mark {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--paper);
+      font-weight: 500;
+    }
+
+    .footer-links {
+      margin-top: 1.4rem;
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-links a {
+      display: block;
+      margin: 0 0 0.55rem 0;
+      line-height: 1.55;
+      color: var(--paper-soft);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(221, 179, 90, 0.35);
+      padding-bottom: 1px;
+      width: max-content;
+      max-width: 100%;
+    }
+
+    .footer-links a:hover { color: var(--gold-on-dark); }
+
+    .contact-lines {
+      display: block;
+    }
+
+    .contact-lines a,
+    .contact-lines span {
+      display: block;
+      line-height: 1.6;
+      margin-bottom: 0.35rem;
+    }
+
+    ::selection { background: var(--gold); color: var(--ground); }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="wordmark"><a href="/">EL&#8209;EMAM</a></div>
+  </header>
+
+  <main class="privacy">
+
+    <p class="priv-label">Privacy &middot; EL&#8209;EMAM</p>
+    <h1>How requests are handled.</h1>
+    <p class="updated">Last updated &middot; 2026</p>
+
+    <p class="intro">
+      This page describes how data submitted through elemamgermanist.com is handled.
+    </p>
+
+    <section class="block">
+      <h2>What you send</h2>
+      <p>When you fill out a learning request, the following is collected: first name, email address, city or country, written answers to two open questions, frequency preference, and optionally how you found this page.</p>
+    </section>
+
+    <section class="block">
+      <h2>Why</h2>
+      <p>This data is read solely by Ahmed El&#8209;Emam to respond to your request. It is not used for marketing, advertising, or shared with third parties.</p>
+    </section>
+
+    <section class="block">
+      <h2>Where it's stored</h2>
+      <p>Submissions are stored through Tally, the form provider, and synced to a private spreadsheet readable only by Ahmed.</p>
+    </section>
+
+    <section class="block">
+      <h2>How long</h2>
+      <p>Data is kept while your request is active. If you become a learner, data is kept for the duration of our work together plus twelve months. If you don't, data is deleted within six months of your last contact.</p>
+    </section>
+
+    <section class="block">
+      <h2>Deletion</h2>
+      <p>You can request deletion at any time by writing to <a href="mailto:ahmed@elemamgermanist.com">ahmed@elemamgermanist.com</a>. Deletion takes effect within seven days.</p>
+    </section>
+
+    <section class="block">
+      <h2>Payment</h2>
+      <p>Payments are handled privately through the payment method shared in the invoice. No payment data is collected on this page.</p>
+    </section>
+
+    <section class="block">
+      <h2>Analytics</h2>
+      <p>This page uses cookie-free analytics that count visits without identifying you personally. No cookies are placed in your browser.</p>
+    </section>
+
+    <section class="block">
+      <h2>Contact</h2>
+      <div class="contact-lines">
+        <a href="mailto:ahmed@elemamgermanist.com">ahmed@elemamgermanist.com</a><br>
+        <span>Ahmed El&#8209;Emam &middot; Germanist &middot; Egypt</span>
+      </div>
+    </section>
+
+    <p class="signoff">— EL&#8209;EMAM</p>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="foot-mark">EL&#8209;EMAM &nbsp;&middot;&nbsp; Germanist</div>
+      <div class="footer-links" role="navigation" aria-label="Footer">
+        <a href="/">Back</a>
+        <a href="mailto:ahmed@elemamgermanist.com">ahmed@elemamgermanist.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
